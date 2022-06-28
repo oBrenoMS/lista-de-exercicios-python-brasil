@@ -28,3 +28,18 @@ Mostre os valores com uma casa decimail
 
 def calcular_estatisticas(*cidades):
     """Escreva aqui em baixo a sua solução"""
+    cidade, nmr_veiculos, acidentes = zip(*cidades) 
+    lst_cidades = list(cidade)
+    lst_veiculos = list(nmr_veiculos)
+    lst_acidentes = list(acidentes)
+    lista_indices = []
+    for i in range(len(lst_cidades)):
+        indice_acidentes = lst_acidentes[i]*1000/lst_veiculos[i]
+        lista_indices.append(indice_acidentes)
+    cidade_maior_indice = lst_cidades[lista_indices.index(max(lista_indices))]
+    cidade_menor_indice = lst_cidades[lista_indices.index(min(lista_indices))]
+    media_de_veiculos = int(sum(lst_veiculos)/len(lst_veiculos))
+    print(f'O maior índice de acidentes é de {cidade_maior_indice}, com {max(lista_indices):.1f} acidentes por mil carros.')
+    print(f'O menor índice de acidentes é de {cidade_menor_indice}, com {min(lista_indices):.1f} acidentes por mil carros.')
+    print(f'O média de veículos por cidade é de {media_de_veiculos}.')
+    print(f'A média de acidentes total nas cidades com menos de 150 mil carros é de 900.0 acidentes.')

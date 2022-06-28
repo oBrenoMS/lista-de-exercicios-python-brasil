@@ -19,3 +19,5 @@ def imprima_a_soma_de_dois_numeros():
     soma = int(input('Escreva um número: '))
     soma += int(input('Escreva outro número: '))
     print(f'A soma dos dois números informados é {soma}')
+
+    
